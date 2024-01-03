@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def replace_c(x, y):
+def remove_char_at(x, y):
     if y < 0 or y >= len(x):
         return x
     output = ""
