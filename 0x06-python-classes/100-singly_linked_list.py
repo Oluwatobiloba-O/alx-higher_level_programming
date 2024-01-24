@@ -52,28 +52,30 @@ class SinglyLinkedList:
     def sorted_insert(self, value):
         """Inserts is new node in sorted order."""
         new_node = Node(value)
-        if self.__head is None or value < self.__head.data:
+        if self.__head is None:
+            new_node.next_node = None
+            self.__head = new_node
+        elif self.__head.data > value:
             new_node.next_node = self.__head
             self.__head = new_node
-            return
-
-        cur = self.__head
-        while cur.next_node is not None and cur.next_node.data < value:
-            cur = cur.next_node
-
-        new_node.next_node = cur.next_node
-        cur.next_node = new_node
+        else:
+            cur = self.__head
+            while (cur.next_node is not None and
+                    cur.next_node.data < value):
+                cur = cur.next_node
+            new_node.next_node = cur.next_node
+            cur.next_node = new_node
 
     def __str__(self):
         """returns the list in string format.
 
         Args:
             result: Prints the linked list, one node per line."""
-        cur = ""
-        result = self.__head
+        values = ""
+        cur = self.__head
         while cur:
-            result += str(cur.data)
+            values += str(cur.data)
             if cur.next_node:
-                result += "\n"
+                values += "\n"
             cur = cur.next_node
         return result
