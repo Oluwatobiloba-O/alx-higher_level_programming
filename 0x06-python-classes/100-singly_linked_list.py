@@ -71,11 +71,9 @@ class SinglyLinkedList:
 
         Args:
             result: Prints the linked list, one node per line."""
-        values = ""
-        cur = self.__head
-        while cur:
-            values += str(cur.data)
-            if cur.next_node:
-                values += "\n"
-            cur = cur.next_node
-        return result
+        values = []
+        tmp = self.__head
+        while tmp is not None:
+            values.append(str(tmp.data))
+            tmp = tmp.next_node
+        return ('\n'.join(values))
