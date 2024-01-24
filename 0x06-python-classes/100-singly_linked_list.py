@@ -4,9 +4,9 @@
 
 class Node:
     """Represents a node in a singly linked list."""
+    
     def __init__(self, data, next_node=None):
         """Initializes a node with given data.
-
         Args:
             data (int): Calls for validation from the setter.
             next_node (Node): Calls for validation from the setter.
@@ -17,13 +17,11 @@ class Node:
     @property
     def data(self):
         """Retrieves the node's data."""
-
         return self.__data
 
     @data.setter
     def data(self, value):
         """Sets the node's data, must be an integer."""
-
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
         self.__data = value
@@ -42,9 +40,10 @@ class Node:
 
 class SinglyLinkedList:
     """Represents a singly linked list."""
+    
     def __init__(self):
         """It initalizes an empty linked list.
-
+        
         Args:
             head: the head of the linked list.
         """
@@ -52,9 +51,7 @@ class SinglyLinkedList:
 
     def sorted_insert(self, value):
         """Inserts is new node in sorted order."""
-
         new_node = Node(value)
-
         if self.__head is None or value < self.__head.data:
             new_node.next_node = self.__head
             self.__head = new_node
