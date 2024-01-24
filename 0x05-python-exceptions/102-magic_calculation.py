@@ -10,4 +10,4 @@ def magic_calculation(a, b):
            result = b + a
            pass
     finally:
-    return result
+        return result
