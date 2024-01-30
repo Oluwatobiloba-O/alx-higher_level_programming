@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""1-rectangle.py"""
+"""Defines a rectangle"""
 
 
 class Rectangle:
-    """Class Rectangle that defines a rectangle.
+    """This defines a rectangle.
     Args:
         width(int): the width of the rectangle
         height(int): the height of the rectangle
@@ -19,7 +19,7 @@ class Rectangle:
             value(int): the value for the width
         """
         return self.__width
-
+    
     @width.setter
     def width(self, value):
         if (
