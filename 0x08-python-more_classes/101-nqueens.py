@@ -4,7 +4,7 @@
 import sys
 
 
-sol = []
+solutions = []
 """The list of possible solutions to the N queens problem.
 """
 n = 0
@@ -56,8 +56,8 @@ def group_exists(group):
     Returns:
         bool: True if it exists, otherwise False.
     '''
-    global sol
-    for stn in sol:
+    global solutions
+    for stn in solutions:
         i = 0
         for stn_pos in stn:
             for grp_pos in group:
@@ -68,18 +68,18 @@ def group_exists(group):
     return False
 
 
-def build_sol(row, group):
+def build_solution(row, group):
     """Builds a solution for the n queens problem.
     Args:
         row (int): The current row in the chessboard.
         group (list of lists of integers): The group of valid positions.
     """
-    global sol
+    global solutions
     global n
     if row == n:
         tmp0 = group.copy()
         if not group_exists(tmp0):
-            sol.append(tmp0)
+            solutions.append(tmp0)
     else:
         for col in range(n):
             a = (row * n) + col
@@ -87,21 +87,21 @@ def build_sol(row, group):
             used_positions = map(lambda x: is_attacking(x[0], x[1]), matches)
             group.append(pos[a].copy())
             if not any(used_positions):
-                build_sol(row + 1, group)
+                build_solution(row + 1, group)
             group.pop(len(group) - 1)
 
 
-def get_sol():
+def get_solutions():
     """Gets the solutions for the given chessboard size.
     """
     global pos, n
     pos = list(map(lambda x: [x // n, x % n], range(n ** 2)))
     a = 0
     group = []
-    build_sol(a, group)
+    build_solution(a, group)
 
 
 n = get_input()
-get_sol()
-for solution in sol:
-    print(sol)
+get_solutions()
+for solution in solutions:
+    print(solution)
