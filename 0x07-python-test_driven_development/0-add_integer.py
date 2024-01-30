@@ -1,16 +1,28 @@
 #!/usr/bin/python3
 
-add_integer = __import__('0-add_integer').add_integer
+def add_integer(a, b=98):
+    """This function adds two float or int numbers.
+    
+    Args:
+        a (float): this is either an int or float.
+        b (int or float): this is either an int or float.
+    Return:
+        result (int): holds the sum of a and b.
+    """
+    
+    if ((type(a) is not int) and (type(a) is not float)):
+        raise TypeError("a must be an integer")
 
-print(add_integer(1, 2))
-print(add_integer(100, -2))
-print(add_integer(2))
-print(add_integer(100.3, -2))
-try:
-    print(add_integer(4, "School"))
-except Exception as e:
-    print(e)
-try:
-    print(add_integer(None))
-except Exception as e:
-    print(e)
+    if a is None:
+        raise TypeError("a must be an integer")
+
+    if ((type(b) is not int) and (type(b) is not float)):
+        raise TypeError("b must be an integer")
+
+    result = a + b
+
+    if result == float('inf') or result == float('-inf'):
+        raise OverflowError("float overflow")
+
+    result = int(a) + int(b)
+    return result
