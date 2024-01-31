@@ -109,3 +109,4 @@ tests:
         >>> add_integer(5, float('NaN'))
         Traceback (most recent call last):
         ValueError: cannot convert float NaN to integer
+        
