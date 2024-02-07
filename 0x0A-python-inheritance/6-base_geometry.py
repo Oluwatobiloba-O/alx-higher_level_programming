@@ -3,6 +3,7 @@
 
 
 class BaseGeometry:
+   """This is the  BaseGeometry class"""
    def area(self):
         """Public instance method -
         that raises an Exception with the message
