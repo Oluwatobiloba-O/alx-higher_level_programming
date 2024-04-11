@@ -1,6 +1,8 @@
 #!/usr/bin/node
 
-//function that increments and calls a function
+/*
+ *function that increments and calls a function
+ */
 
 let myObject = {
 	type: 'object',
