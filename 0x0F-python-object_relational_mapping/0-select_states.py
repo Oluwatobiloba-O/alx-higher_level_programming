@@ -19,7 +19,7 @@ if __name__ == "__main__":
     state_col = cur.fetchall()
 
     for row in state_col:
-        print(row)
+        print("{}".format(row))
 
     cur.close()
     db.close()
