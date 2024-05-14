@@ -9,8 +9,8 @@ if __name__ == "__main__":
         host='localhost',
         user=sys.argv[1],
         passwd=sys.argv[2],
-        port=3306,
-        db=sys.argv[3]
+        db=sys.argv[3],
+        port=3306
     )
 
     cur = db.cursor()
@@ -19,7 +19,7 @@ if __name__ == "__main__":
     state_col = cur.fetchall()
 
     for row in state_col:
-        print("{}".format(row))
+        print(row)
 
     cur.close()
     db.close()
