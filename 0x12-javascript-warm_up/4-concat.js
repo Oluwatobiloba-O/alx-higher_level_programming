@@ -4,3 +4,6 @@
 
 const command1 = process.argv[2];
 const command2 = process.argv[3];
+
+const result = command1 + ' is ' + command2;
+console.log(result);
